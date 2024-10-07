@@ -1,9 +1,9 @@
-import { configureStore } from '@reduxjs/toolkit';
-import playerReducer from './PlayerSlice';
+import { configureStore } from "@reduxjs/toolkit";
+import fruitReducer from "./FruitSlice";
 
 const store = configureStore({
   reducer: {
-    player: playerReducer,
+    fruit: fruitReducer,
   },
 });
 

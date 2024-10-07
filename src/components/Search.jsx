@@ -1,10 +1,10 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { setSearchInput } from "../Redux/PlayerSlice";
+import { setSearchInput } from "../Redux/FruitSlice";
 
 const Search = () => {
   const dispatch = useDispatch();
-  const searchInput = useSelector((state) => state.player.searchInput);
+  const searchInput = useSelector((state) => state.fruit.searchInput);
 
   return (
     <div>
