@@ -91,7 +91,7 @@ const Table = ({ table, selectPlayer }) => {
         </thead>
         <tbody>
           <tr>
-            <td className="border border-slate-800 w-24 h-10 max-sm:w-14 max-sm:text-sm">
+            <td className="text-center border border-slate-800 w-24 h-10 max-sm:w-14 max-sm:text-sm">
               {table.map(
                 (item) =>
                   item.id === 1 && (
@@ -104,7 +104,7 @@ const Table = ({ table, selectPlayer }) => {
                   )
               )}
             </td>
-            <td className="border border-slate-800 w-24 h-10 max-sm:w-14 max-sm:text-sm">
+            <td className="text-center border border-slate-800 w-24 h-10 max-sm:w-14 max-sm:text-sm">
               {table.map(
                 (item) =>
                   item.id === 2 && (
@@ -117,7 +117,7 @@ const Table = ({ table, selectPlayer }) => {
                   )
               )}
             </td>
-            <td className="border border-slate-800 w-24 h-10 max-sm:w-14 max-sm:text-sm">
+            <td className="text-center border border-slate-800 w-24 h-10 max-sm:w-14 max-sm:text-sm">
               {table.map(
                 (item) =>
                   item.id === 3 && (
@@ -130,7 +130,7 @@ const Table = ({ table, selectPlayer }) => {
                   )
               )}
             </td>
-            <td className="border border-slate-800 w-24 h-10 max-sm:w-14 max-sm:text-sm">
+            <td className="text-center border border-slate-800 w-24 h-10 max-sm:w-14 max-sm:text-sm">
               {table.map(
                 (item) =>
                   item.id === 4 && (
@@ -143,7 +143,7 @@ const Table = ({ table, selectPlayer }) => {
                   )
               )}
             </td>
-            <td className="border border-slate-800 w-24 h-10 max-sm:w-14 max-sm:text-sm">
+            <td className="text-center border border-slate-800 w-24 h-10 max-sm:w-14 max-sm:text-sm">
               {table.map(
                 (item) =>
                   item.id === 5 && (
@@ -156,7 +156,7 @@ const Table = ({ table, selectPlayer }) => {
                   )
               )}
             </td>
-            <td className="border border-slate-800 w-24 h-10 max-sm:w-14 max-sm:text-sm">
+            <td className="text-center border border-slate-800 w-24 h-10 max-sm:w-14 max-sm:text-sm">
               {table.map(
                 (item) =>
                   item.id === 6 && (
