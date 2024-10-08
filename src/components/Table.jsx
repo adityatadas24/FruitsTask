@@ -1,177 +1,42 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 
-const Table = ({ table, selectFruits }) => {
+const Table = ({
+  fruits,
+  isFruitSelected,
+  toggleFruit,
+  addFruit,
+  selectedToFruits,
+  button,
+}) => {
   const dispatch = useDispatch();
 
   return (
-    <div>
-      <table>
-        <thead className="bg-slate-400 cursor-pointer">
-          <tr>
-            <th className="border-2 border-black w-24 h-10 max-sm:w-14 max-sm:text-sm">
-              {table.map(
-                (item) =>
-                  item.id === 1 && (
-                    <p
-                      key={item.id}
-                      onClick={() => dispatch(selectFruits(item))}
-                    >
-                      {item.select}
-                    </p>
-                  )
-              )}
-            </th>
-            <th className="border-2 border-black w-24 h-10 max-sm:w-14 max-sm:text-sm">
-              {table.map(
-                (item) =>
-                  item.id === 2 && (
-                    <p
-                      key={item.id}
-                      onClick={() => dispatch(selectFruits(item))}
-                    >
-                      {item.select}
-                    </p>
-                  )
-              )}
-            </th>
-            <th className="border-2 border-black w-24 h-10 max-sm:w-14 max-sm:text-sm">
-              {table.map(
-                (item) =>
-                  item.id === 3 && (
-                    <p
-                      key={item.id}
-                      onClick={() => dispatch(selectFruits(item))}
-                    >
-                      {item.select}
-                    </p>
-                  )
-              )}
-            </th>
-            <th className="border-2 border-black w-24 h-10 max-sm:w-14 max-sm:text-sm">
-              {table.map(
-                (item) =>
-                  item.id === 4 && (
-                    <p
-                      key={item.id}
-                      onClick={() => dispatch(selectFruits(item))}
-                    >
-                      {item.select}
-                    </p>
-                  )
-              )}
-            </th>
-            <th className="border-2 border-black w-24 h-10 max-sm:w-14 max-sm:text-sm">
-              {table.map(
-                (item) =>
-                  item.id === 5 && (
-                    <p
-                      key={item.id}
-                      onClick={() => dispatch(selectFruits(item))}
-                    >
-                      {item.select}
-                    </p>
-                  )
-              )}
-            </th>
-            <th className="border-2 border-black w-24 h-10 max-sm:w-14 max-sm:text-sm">
-              {table.map(
-                (item) =>
-                  item.id === 6 && (
-                    <p
-                      key={item.id}
-                      onClick={() => dispatch(selectFruits(item))}
-                    >
-                      {item.select}
-                    </p>
-                  )
-              )}
-            </th>
-          </tr>
-        </thead>
-        <tbody className="cursor-pointer">
-          <tr>
-            <td className="text-center border border-slate-800 w-24 h-10 max-sm:w-14 max-sm:text-sm">
-              {table.map(
-                (item) =>
-                  item.id === 1 && (
-                    <p
-                      key={item.id}
-                      onClick={() => dispatch(selectFruits(item))}
-                    >
-                      {item.fruits}
-                    </p>
-                  )
-              )}
-            </td>
-            <td className="text-center border border-slate-800 w-24 h-10 max-sm:w-14 max-sm:text-sm">
-              {table.map(
-                (item) =>
-                  item.id === 2 && (
-                    <p
-                      key={item.id}
-                      onClick={() => dispatch(selectFruits(item))}
-                    >
-                      {item.fruits}
-                    </p>
-                  )
-              )}
-            </td>
-            <td className="text-center border border-slate-800 w-24 h-10 max-sm:w-14 max-sm:text-sm">
-              {table.map(
-                (item) =>
-                  item.id === 3 && (
-                    <p
-                      key={item.id}
-                      onClick={() => dispatch(selectFruits(item))}
-                    >
-                      {item.fruits}
-                    </p>
-                  )
-              )}
-            </td>
-            <td className="text-center border border-slate-800 w-24 h-10 max-sm:w-14 max-sm:text-sm">
-              {table.map(
-                (item) =>
-                  item.id === 4 && (
-                    <p
-                      key={item.id}
-                      onClick={() => dispatch(selectFruits(item))}
-                    >
-                      {item.fruits}
-                    </p>
-                  )
-              )}
-            </td>
-            <td className="text-center border border-slate-800 w-24 h-10 max-sm:w-14 max-sm:text-sm">
-              {table.map(
-                (item) =>
-                  item.id === 5 && (
-                    <p
-                      key={item.id}
-                      onClick={() => dispatch(selectFruits(item))}
-                    >
-                      {item.fruits}
-                    </p>
-                  )
-              )}
-            </td>
-            <td className="text-center border border-slate-800 w-24 h-10 max-sm:w-14 max-sm:text-sm">
-              {table.map(
-                (item) =>
-                  item.id === 6 && (
-                    <p
-                      key={item.id}
-                      onClick={() => dispatch(selectFruits(item))}
-                    >
-                      {item.fruits}
-                    </p>
-                  )
-              )}
-            </td>
-          </tr>
-        </tbody>
-      </table>
+    <div className="mt-3 flex-col">
+      <ul>
+        {fruits.map((item) => (
+          <li
+            className="flex mt-1 gap-6 max-sm:mt-[2px] max-sm:text-sm"
+            key={item.id}
+          >
+            <input
+              type="checkbox"
+              checked={isFruitSelected(item)}
+              onChange={() => dispatch(toggleFruit(item))}
+            />
+            <p>{item.text}</p>
+          </li>
+        ))}
+      </ul>
+
+      <button
+        className={` bg-black p-2 text-white rounded-xl px-6 hover:bg-white hover:text-black hover:border-2 border-black mt-4 max-sm:mt-2 max-sm:px-3 max-sm:text-sm ${
+          selectedToFruits.length === 0 ? "opacity-50 cursor-not-allowed" : ""
+        }`}
+        onClick={() => dispatch(addFruit())}
+      >
+        {button}
+      </button>
     </div>
   );
 };

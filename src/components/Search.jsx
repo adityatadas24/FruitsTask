@@ -1,17 +1,15 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { setSearchInput } from "../Redux/FruitSlice";
+import { useDispatch } from "react-redux";
 
-const Search = () => {
+const Search = ({ searchInputFruit, setSearchInput }) => {
   const dispatch = useDispatch();
-  const searchInput = useSelector((state) => state.fruit.searchInput);
 
   return (
     <div>
       <input
-        className="border-2 border-black p-2 px-4 rounded-lg"
+        className="border-[1px] border-black p-2 pl-2 px-4 rounded-lg max-sm:p-1"
         type="text"
-        value={searchInput}
+        value={searchInputFruit}
         onChange={(e) => dispatch(setSearchInput(e.target.value))}
         placeholder="Search..."
       />
