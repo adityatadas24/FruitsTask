@@ -29,6 +29,13 @@ const FruitSlice = createSlice({
       state.searchInputFruit2 = action.payload;
     },
 
+    clearSelectedToFruit1(state) {
+      state.selectedToFruit1 = [];
+    },
+    clearSelectedToFruit2(state) {
+      state.selectedToFruit2 = [];
+    },
+
     toggleSelectToFruit1(state, action) {
       const selectedFruit = action.payload;
       const exists = state.selectedToFruit1.find(
@@ -65,6 +72,7 @@ const FruitSlice = createSlice({
         state.fruit2.push(selectedFruit);
       });
       state.selectedToFruit1 = [];
+      state.searchInputFruit1 = ''; 
     },
 
     addFruitsBackToFruit1(state) {
@@ -74,7 +82,9 @@ const FruitSlice = createSlice({
         );
         state.fruit1.push(selectedFruit);
       });
-      state.selectedToFruit2 = [];
+      state.selectedToFruit2 = []; 
+      state.searchInputFruit2 = ''; 
+
     },
   },
 });
@@ -86,6 +96,8 @@ export const {
   toggleSelectToFruit2,
   addFruitsToFruit2,
   addFruitsBackToFruit1,
+  clearSelectedToFruit1,
+  clearSelectedToFruit2,
 } = FruitSlice.actions;
 
 export default FruitSlice.reducer;

@@ -7,6 +7,8 @@ import {
   toggleSelectToFruit2,
   addFruitsToFruit2,
   addFruitsBackToFruit1,
+  clearSelectedToFruit1,
+  clearSelectedToFruit2,
 } from "../Redux/FruitSlice";
 import Search from "./Search";
 import Table from "./Table";
@@ -60,6 +62,7 @@ const Dashboard = () => {
           <Search
             setSearchInput={setSearchInputFruit1}
             searchInputFruit={searchInputFruit1}
+            clearFilter={clearSelectedToFruit1()}
           />
 
           <Table
@@ -80,6 +83,8 @@ const Dashboard = () => {
           <Search
             setSearchInput={setSearchInputFruit2}
             searchInputFruit={searchInputFruit2}
+            clearFilter={clearSelectedToFruit2()}
+
           />
 
           <Table
